@@ -846,4 +846,4 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 @media print { .pencil { display: none !important; } }
 /* keep the menu on one line at laptop widths */
 .nav__links a { white-space: nowrap; }
-@media (max-width: 1200px) and (min-width: 901px) { .brand__name { display: none; } .nav__links a { padding: 8px 10px; font-size: .9rem; } }
+@media (max-width: 1000px) and (min-width: 901px) { .brand__name { display: none; } }
