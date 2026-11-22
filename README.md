@@ -1,6 +1,6 @@
 # Omotola Oyelami: personal website
 
-**Live at https://omotola-oyelami.netlify.app** (Netlify project: `omotola-oyelami`).
+**Live at https://www.tolaoyelami.org** (Netlify project: `omotola-oyelami`; the old omotola-oyelami.netlify.app address forwards here).
 
 A one-page personal brand site. It's plain HTML, CSS and JavaScript, so there's no build step and nothing to install.
 
