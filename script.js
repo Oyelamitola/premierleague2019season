@@ -8,7 +8,12 @@
 
   // Sticky nav border on scroll
   var nav = document.querySelector('.nav');
-  function onScroll() { nav.classList.toggle('is-scrolled', window.scrollY > 8); }
+  var bar = document.getElementById('progress');
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(window.scrollY / max, 1) : 0) + ')';
+  }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
@@ -40,13 +45,21 @@
     entries.forEach(function (entry) {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('is-in');
+      // Drop the stagger delay once revealed so hover effects stay snappy.
+      var t = entry.target; setTimeout(function () { t.style.removeProperty('--d'); }, 1300);
       var counter = entry.target.querySelector('[data-count]');
       if (counter) countUp(counter);
       io.unobserve(entry.target);
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  document.querySelectorAll('.reveal').forEach(function (el) {
+    // Stagger siblings so groups of cards flow in one after another.
+    var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.classList.contains('reveal'); });
+    var i = sibs.indexOf(el);
+    if (i > 0) el.style.setProperty('--d', Math.min(i * 90, 450) + 'ms');
+    io.observe(el);
+  });
 
   function countUp(el) {
     var target = parseFloat(el.getAttribute('data-count'));

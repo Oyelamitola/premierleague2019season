@@ -47,6 +47,7 @@
 
   <!-- ================= NAV ================= -->
   <header class="nav" id="top">
+    <div class="progress" aria-hidden="true"><span id="progress"></span></div>
     <div class="wrap nav__inner">
       <a href="#top" class="brand" aria-label="Omotola Oyelami, back to top">
         <span class="brand__mark" aria-hidden="true">OO</span>
@@ -236,8 +237,8 @@
               <path d="M102 90 Q110 95 118 90" stroke="#FFF4DC" stroke-width="3" fill="none" stroke-linecap="round"/>
             </svg>
             <svg class="waves" viewBox="0 0 440 40" preserveAspectRatio="none">
-              <path d="M0 14 Q27.5 2 55 14 T110 14 T165 14 T220 14 T275 14 T330 14 T385 14 T440 14 V40 H0 Z" fill="#2F9BDB" opacity=".9"/>
-              <path d="M0 22 Q27.5 12 55 22 T110 22 T165 22 T220 22 T275 22 T330 22 T385 22 T440 22 V40 H0 Z" fill="#1F7DB5"/>
+              <g class="wave wave--back"><path d="M0 14 Q27.5 2 55 14 T110 14 T165 14 T220 14 T275 14 T330 14 T385 14 T440 14 T495 14 T550 14 V40 H0 Z" fill="#2F9BDB" opacity=".9"/></g>
+              <g class="wave wave--front"><path d="M0 22 Q27.5 12 55 22 T110 22 T165 22 T220 22 T275 22 T330 22 T385 22 T440 22 T495 22 T550 22 V40 H0 Z" fill="#1F7DB5"/></g>
             </svg>
             <svg class="char boxy" viewBox="0 0 150 130">
               <ellipse cx="72" cy="124" rx="48" ry="5" fill="rgba(0,0,0,.12)"/>
@@ -258,6 +259,21 @@
           <li class="reveal"><b>6</b><span>destination markets and ports</span></li>
           <li class="reveal"><b>3</b><span>languages in our tools: English, French, Arabic</span></li>
         </ul>
+
+        <div class="pipe-road" aria-hidden="true">
+          <div class="pipe-road__car">
+            <svg class="char" viewBox="0 0 170 100">
+              <path d="M18 76 V60 Q18 47 32 45 L52 42 Q64 18 92 18 H104 Q126 18 138 42 L150 46 Q160 50 160 62 V76 Z" fill="#8E6FE0" stroke="#13201A" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M62 42 Q70 26 90 26 V42 Z" fill="#CDEBFA" stroke="#13201A" stroke-width="3.5"/>
+              <path d="M98 42 V26 H104 Q120 26 128 42 Z" fill="#CDEBFA" stroke="#13201A" stroke-width="3.5"/>
+              <circle cx="72" cy="58" r="8" fill="#fff" stroke="#13201A" stroke-width="3"/><circle cx="74.5" cy="59" r="3.6" fill="#13201A"/>
+              <circle cx="98" cy="58" r="8" fill="#fff" stroke="#13201A" stroke-width="3"/><circle cx="100.5" cy="59" r="3.6" fill="#13201A"/>
+              <path d="M78 68 Q86 76 94 68" stroke="#13201A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              <g class="wheel"><circle cx="46" cy="77" r="14" fill="#13201A"/><circle cx="46" cy="77" r="6" fill="#E9E4D8"/></g>
+              <g class="wheel"><circle cx="130" cy="77" r="14" fill="#13201A"/><circle cx="130" cy="77" r="6" fill="#E9E4D8"/></g>
+            </svg>
+          </div>
+        </div>
 
         <!-- The pipeline -->
         <ol class="pipeline">
