@@ -744,3 +744,49 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .js .snap.reveal.is-in:hover { transform: rotate(0deg) scale(1.05); }
 @media (prefers-reduced-motion: reduce) { .snap { animation: none !important; } .snap:hover, .js .snap.reveal.is-in:hover { transform: rotate(var(--r, 0deg)); } .hero__card:hover .portrait img { transform: none; } }
 @media print { .snaps-wrap { display: none; } }
+
+/* ---------- Wins since taking over import operations ---------- */
+.wins { margin: 8px 0 28px; }
+.wins__title { font-size: 1.5rem; margin-bottom: 16px; }
+.wins__grid { display: grid; gap: 14px; }
+@media (min-width: 900px) { .wins__grid { grid-template-columns: 1.6fr 1fr 1fr; } }
+.win { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 22px 24px; position: relative; overflow: hidden; }
+.win::after { content: ""; position: absolute; right: -30px; top: -30px; width: 110px; height: 110px; border-radius: 50%; background: color-mix(in srgb, var(--sun) 16%, transparent); }
+.win--big { background: var(--green); color: var(--on-dark); border-color: transparent; }
+.win--big::after { background: rgba(240,178,62,.14); }
+.win__label { font-weight: 700; margin: 0 0 6px; font-size: 1rem; }
+.win--big .win__label { color: #F0B23E; text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; }
+.win__num { font-family: var(--serif); font-size: 2.6rem; line-height: 1; margin: 0 0 8px; color: var(--coral); }
+.win:nth-child(3) .win__num { color: var(--plum); }
+.win__num span { font-size: 1.2rem; color: var(--muted); }
+.win__note { margin: 0; font-size: .95rem; color: var(--muted); }
+.win--big .win__note { color: var(--on-dark-muted); margin-top: 14px; }
+.win--big .win__note strong { color: #fff; }
+.win__compare { display: grid; gap: 10px; margin-top: 10px; }
+.win__bar { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 12px; position: relative; }
+.win__bar b { font-family: var(--serif); font-size: 1.5rem; font-weight: 500; color: #fff; grid-column: 2; grid-row: 1; }
+.win__bar small { grid-column: 2; grid-row: 2; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--on-dark-muted); text-align: right; }
+.win__bar-fill { grid-column: 1; grid-row: 1 / span 2; height: 18px; border-radius: 999px; background: rgba(255,255,255,.12); position: relative; overflow: hidden; }
+.win__bar-fill::before { content: ""; position: absolute; inset: 0; width: var(--w); border-radius: 999px; transform-origin: 0 50%; }
+.win__bar-fill--before::before { background: #FF9A80; }
+.win__bar-fill--after::before { background: #8FE0B8; }
+.js .win--big .win__bar-fill::before { transform: scaleX(0); transition: transform 1.4s cubic-bezier(.2,.7,.2,1) .3s; }
+.js .win--big.is-in .win__bar-fill::before { transform: scaleX(1); }
+
+/* ---------- dashboard card ---------- */
+@media (min-width: 720px) { .tool--dash { grid-column: 1 / -1; } }
+.tool--dash { display: grid; gap: 22px; align-items: center; }
+@media (min-width: 900px) { .tool--dash { grid-template-columns: 1.15fr 1fr; padding: 32px; } }
+.tool--dash h3 { font-size: clamp(1.5rem, 2.6vw, 1.9rem); }
+.dash-mock { background: #13201A; color: #F3EEE3; border: 2.5px solid #13201A; border-radius: 14px; box-shadow: 5px 5px 0 #0E4D3A; padding: 16px 18px; }
+.dash-mock__head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid rgba(255,255,255,.18); padding-bottom: 8px; margin-bottom: 8px; }
+.dash-mock__head b { font-family: var(--serif); font-weight: 500; font-size: 1.15rem; }
+.dash-mock__head span { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: #B9C7BF; }
+.dash-mock ul { display: grid; gap: 4px; }
+.dash-mock li { display: grid; grid-template-columns: 9.5em 1fr auto; gap: 10px; align-items: center; font-size: .85rem; padding: 7px 0; }
+.dash-mock li i { height: 10px; border-radius: 999px; background: rgba(255,255,255,.1); position: relative; overflow: hidden; }
+.dash-mock li i::before { content: ""; position: absolute; inset: 0; width: var(--w); background: var(--c2); border-radius: 999px; animation: barpulse 3.2s ease-in-out infinite; transform-origin: 0 50%; }
+.dash-mock li:nth-child(2) i::before { animation-delay: .5s; } .dash-mock li:nth-child(3) i::before { animation-delay: 1s; } .dash-mock li:nth-child(4) i::before { animation-delay: 1.5s; }
+@keyframes barpulse { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(.86); } }
+@media (max-width: 480px) { .dash-mock li { grid-template-columns: 1fr auto; } .dash-mock li i { grid-column: 1 / -1; grid-row: 2; } }
+@media (prefers-reduced-motion: reduce) { .dash-mock li i::before { animation: none !important; } .js .win--big .win__bar-fill::before { transform: none; transition: none; } }
