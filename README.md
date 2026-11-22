@@ -1,5 +1,7 @@
 # Omotola Oyelami: personal website
 
+**Live at https://omotola-oyelami.netlify.app** (Netlify project: `omotola-oyelami`).
+
 A one-page personal brand site. It's plain HTML, CSS and JavaScript, so there's no build step and nothing to install.
 
 ```
@@ -18,21 +20,15 @@ assets/portrait.jpg your photo goes here (square, 800×800 or larger)
 - **Update a role or number:** every role, metric and case study is plain text in `index.html`.
 - **Preview locally:** open `index.html` in a browser.
 
-## Putting it online (free)
+## Updating the live site
 
-**Netlify (simplest):** go to app.netlify.com/drop and drag this folder onto the page. You get a link like `omotola-oyelami.netlify.app`, which you can rename in Site settings.
+The site is hosted on Netlify as the project `omotola-oyelami`. It is not connected to GitHub, so a push does not update it.
+To publish changes, either ask Claude to redeploy it, or open the project at app.netlify.com, go to Deploys, and drag this folder onto the upload area.
 
-**GitHub Pages:** in the repository, go to Settings → Pages, choose "Deploy from a branch", then pick the branch and `/ (root)`.
+The public site is open to everyone. Preview deploys require a Netlify team login.
 
-**Custom domain:** a domain like `omotolaoyelami.com` costs about $10–15 a year. Both Netlify and GitHub Pages can connect one under their domain settings.
+### Custom domain
 
-### After it's live
+A domain like `omotolaoyelami.com` costs about $10–15 a year. Add it under Domain management in the Netlify project, then update `og:url`, `og:image` and the canonical link at the top of `index.html` to the new address.
 
-Change the two lines in `index.html` that start with `<meta property="og:image"` and add `og:url` so they use the full address, for example:
-
-```html
-<meta property="og:image" content="https://your-domain.com/assets/og-image.png" />
-<meta property="og:url" content="https://your-domain.com/" />
-```
-
-LinkedIn needs the full address to show the preview card. After you publish, paste the link into https://www.linkedin.com/post-inspector/ to refresh LinkedIn's cache.
+After any change to the preview image or text, paste the link into https://www.linkedin.com/post-inspector/ to refresh LinkedIn's cached preview.
