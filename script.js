@@ -37,6 +37,21 @@
     try { localStorage.setItem('theme', next); } catch (e) {}
   });
 
+  // Liquid glass: a soft glare follows the pointer across glass cards (mouse/trackpad only)
+  if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reduceMotion) {
+    var glassSel = '.hero__card, .role, .case, .tool, .skillset, .cred, .now-card, .pipe, .now-stats li, .win, .article, .principles li, .stat';
+    document.querySelectorAll(glassSel).forEach(function (el) {
+      el.classList.add('glare-host');
+      var g = document.createElement('span'); g.className = 'glare'; g.setAttribute('aria-hidden', 'true');
+      el.appendChild(g);
+      el.addEventListener('pointermove', function (e) {
+        var r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
+
   // Reveal-on-scroll and number count-up
   if (!('IntersectionObserver' in window) || reduceMotion) return;
   root.classList.add('js');
