@@ -801,3 +801,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .js .nickname.reveal { transform: rotate(-2deg) translateY(18px); }
 .js .nickname.reveal.is-in { transform: rotate(-2deg); }
 @media (prefers-reduced-motion: reduce) { .wave-hand { animation: none; } }
+
+/* founder role */
+.strip__list small { font-family: var(--sans); font-size: .75rem; color: var(--muted); }
+.role--founder { background: color-mix(in srgb, var(--sun) 8%, var(--surface)); }
+.role__badge--founder { background: var(--sun); color: #13201A; }
