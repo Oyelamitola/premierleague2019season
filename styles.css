@@ -790,3 +790,14 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 @keyframes barpulse { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(.86); } }
 @media (max-width: 480px) { .dash-mock li { grid-template-columns: 1fr auto; } .dash-mock li i { grid-column: 1 / -1; grid-row: 2; } }
 @media (prefers-reduced-motion: reduce) { .dash-mock li i::before { animation: none !important; } .js .win--big .win__bar-fill::before { transform: none; transition: none; } }
+
+/* nickname note under the name */
+.hero__title { margin-bottom: 10px; }
+.nickname { font-family: "Caveat", cursive; font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 600; color: var(--muted); margin: 0 0 24px 4px; transform: rotate(-2deg); transform-origin: left center; display: inline-block; }
+.nickname b { color: var(--coral); font-weight: 700; position: relative; }
+.nickname b::after { content: ""; position: absolute; left: -2px; right: -2px; bottom: 2px; height: 8px; background: color-mix(in srgb, var(--sun) 45%, transparent); z-index: -1; border-radius: 4px; }
+.wave-hand { display: inline-block; transform-origin: 70% 70%; animation: wavehand 2.6s ease-in-out infinite; }
+@keyframes wavehand { 0%, 60%, 100% { transform: rotate(0); } 10%, 30% { transform: rotate(16deg); } 20%, 40% { transform: rotate(-8deg); } }
+.js .nickname.reveal { transform: rotate(-2deg) translateY(18px); }
+.js .nickname.reveal.is-in { transform: rotate(-2deg); }
+@media (prefers-reduced-motion: reduce) { .wave-hand { animation: none; } }
