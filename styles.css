@@ -715,3 +715,32 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
   .pipe:hover, .now-stats li:hover, .skillset:hover, .cred:hover { transform: none; }
 }
 @media print { .progress, .pipe-road, .route::after { display: none !important; } }
+
+/* ---------- portrait + polaroid snaps ---------- */
+.portrait img { transition: transform .6s ease; }
+.hero__card:hover .portrait img { transform: scale(1.04); }
+
+.snaps-wrap { margin-top: 64px; }
+.snaps-title { font-family: "Caveat", var(--serif); font-size: 2.4rem; font-weight: 700; color: var(--coral); margin-bottom: 18px; transform: rotate(-2deg); display: inline-block; }
+.snaps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 18px; }
+@media (min-width: 900px) { .snaps { grid-template-columns: repeat(4, 1fr); gap: 28px; } }
+.snap {
+  position: relative; background: #fff; padding: 10px 10px 14px; border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 14px 30px -14px rgba(0,0,0,.35);
+  transform: rotate(var(--r, 0deg)); transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s;
+  animation: snapfloat 6s ease-in-out infinite;
+}
+.snap:nth-child(2) { animation-delay: -1.5s; } .snap:nth-child(3) { animation-delay: -3s; } .snap:nth-child(4) { animation-delay: -4.5s; }
+@keyframes snapfloat { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+.snap::before { /* tape */
+  content: ""; position: absolute; top: -10px; left: 50%; width: 70px; height: 22px; transform: translateX(-50%) rotate(-3deg);
+  background: color-mix(in srgb, var(--t) 55%, transparent); border-radius: 3px; z-index: 1;
+}
+.snap img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 3px; display: block; }
+.snap span { display: block; font-family: "Caveat", cursive; font-size: 1.35rem; font-weight: 600; line-height: 1.15; color: #2B313B; text-align: center; margin-top: 10px; }
+.snap:hover { transform: rotate(0deg) scale(1.05); z-index: 2; box-shadow: 0 4px 8px rgba(0,0,0,.1), 0 24px 44px -16px rgba(0,0,0,.45); }
+.js .snap.reveal { transform: rotate(var(--r, 0deg)) translateY(18px); }
+.js .snap.reveal.is-in { transform: rotate(var(--r, 0deg)); }
+.js .snap.reveal.is-in:hover { transform: rotate(0deg) scale(1.05); }
+@media (prefers-reduced-motion: reduce) { .snap { animation: none !important; } .snap:hover, .js .snap.reveal.is-in:hover { transform: rotate(var(--r, 0deg)); } .hero__card:hover .portrait img { transform: none; } }
+@media print { .snaps-wrap { display: none; } }
