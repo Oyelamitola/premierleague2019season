@@ -602,3 +602,23 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
   .tool--feature { grid-column: 1 / -1; grid-template-columns: 1fr 1.1fr; padding: 32px; }
   .tool--wide { grid-column: span 2; }
 }
+
+/* newsletter card */
+@media (min-width: 720px) { .tool--news { grid-column: 1 / -1; } }
+.tool--news { display: grid; gap: 22px; align-items: center; }
+@media (min-width: 900px) { .tool--news { grid-template-columns: 1.15fr 1fr; padding: 32px; } }
+.tool--news h3 { font-size: clamp(1.5rem, 2.6vw, 1.9rem); }
+.news-mock { background: #FFFDF6; color: #13201A; border: 2.5px solid #13201A; border-radius: 14px; box-shadow: 5px 5px 0 #13201A; padding: 16px 18px; transform: rotate(1deg); }
+.news-mock__head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #13201A; padding-bottom: 8px; margin-bottom: 10px; }
+.news-mock__head b { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; }
+.news-mock__head span { font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #8A3D0B; }
+.news-mock__kicker { font-size: .72rem !important; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #56615B; margin: 0 0 6px !important; }
+.news-mock ul { display: grid; gap: 6px; }
+.news-mock li { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: .9rem; font-weight: 600; padding: 6px 0; border-bottom: 1px dashed #DAD2C2; }
+.news-mock li:last-child { border-bottom: 0; }
+.st { font-style: normal; font-size: .72rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+.st--ok { background: #D6F2E4; color: #0B5D3B; }
+.st--watch { background: #FFF0C7; color: #7A5200; }
+.st--check { background: #E3EEFB; color: #164E86; }
+.st--opp { background: #ECE5FF; color: #4B2FA8; }
+.st--bad { background: #FFE0D9; color: #A3301A; }
