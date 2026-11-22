@@ -533,3 +533,66 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 @media print { .road, .harbour, .chartguy, .contact__car, .blob { display: none !important; } }
 .now-grid { align-items: start; }
 .contact__car { width: 180px; }
+
+/* ---------- Now: mini stats ---------- */
+.now-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 28px; }
+@media (min-width: 900px) { .now-stats { grid-template-columns: repeat(4, 1fr); } }
+.now-stats li { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; display: flex; gap: 14px; align-items: center; }
+.now-stats b { font-family: var(--serif); font-size: 2.4rem; line-height: 1; font-weight: 500; }
+.now-stats li:nth-child(1) b { color: var(--coral); }
+.now-stats li:nth-child(2) b { color: var(--sky); }
+.now-stats li:nth-child(3) b { color: var(--green-ink); }
+.now-stats li:nth-child(4) b { color: var(--plum); }
+.now-stats span { font-size: .9rem; color: var(--muted); line-height: 1.35; }
+
+/* ---------- Built by me ---------- */
+.built { background: linear-gradient(180deg, var(--bg), color-mix(in srgb, var(--plum) 7%, var(--bg))); }
+.built-head { display: grid; gap: 24px; align-items: end; margin-bottom: 40px; }
+.built-head .section__head { margin-bottom: 0; }
+@media (min-width: 960px) { .built-head { grid-template-columns: 1fr 220px; gap: 48px; } }
+.laptop { position: relative; width: 190px; justify-self: center; margin-top: 40px; animation: hop 3s ease-in-out infinite; }
+.laptop .bubble { left: 50%; top: -42px; transform: translateX(-50%); animation: none; }
+.laptop .bubble::after { left: calc(50% - 7px); }
+.spark { transform-box: fill-box; transform-origin: center; animation: twinkle 1.6s ease-in-out infinite; }
+@keyframes twinkle { 0%, 100% { transform: scale(.7) rotate(0); opacity: .6; } 50% { transform: scale(1.1) rotate(20deg); opacity: 1; } }
+
+.tools { display: grid; gap: 18px; }
+@media (min-width: 720px) { .tools { grid-template-columns: repeat(2, 1fr); } .tool--feature { grid-column: 1 / -1; } }
+@media (min-width: 1060px) { .tools { grid-template-columns: repeat(3, 1fr); } .tool--feature { grid-column: span 2; grid-row: span 2; } }
+.tool { background: var(--surface); border: 1px solid var(--line); border-top: 5px solid var(--c); border-radius: 20px; padding: 24px; transition: transform .25s, box-shadow .25s; }
+.tool:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.tool h3 { font-size: 1.35rem; margin-bottom: 10px; }
+.tool p { font-size: .97rem; margin: 0; }
+.tool__tag { font-size: .76rem !important; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--muted); margin-bottom: 10px !important; }
+.tool--feature { display: grid; gap: 22px; align-content: start; }
+.tool--feature h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.tool--feature .tool__body > p:not(.tool__tag) { font-size: 1.05rem; }
+.tool__chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.tool__chips li { font-size: .85rem; font-weight: 600; padding: 5px 12px; border-radius: 999px; background: color-mix(in srgb, var(--c) 14%, var(--surface)); border: 1px solid color-mix(in srgb, var(--c) 40%, transparent); }
+
+/* mock app screenshot drawn in CSS */
+.mock { border: 2.5px solid #13201A; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 5px 5px 0 #13201A; }
+.mock__bar { height: 26px; background: #13201A; display: flex; gap: 6px; align-items: center; padding: 0 10px; }
+.mock__bar i { width: 9px; height: 9px; border-radius: 50%; background: #F2603F; }
+.mock__bar i:nth-child(2) { background: #FFC23D; } .mock__bar i:nth-child(3) { background: #5CC79A; }
+.mock__body--hub { display: grid; grid-template-columns: 70px 1fr; min-height: 190px; }
+.mock__side { background: #0E4D3A; background-image: repeating-linear-gradient(180deg, transparent 0 22px, rgba(255,255,255,.16) 22px 30px); background-position: 0 18px; }
+.mock__main { padding: 16px; display: grid; gap: 16px; align-content: start; background: #F7F9FB; }
+.mock__steps { display: flex; gap: 6px; align-items: center; }
+.mock__steps b { flex: 1; height: 10px; border-radius: 5px; background: #5CC79A; }
+.mock__steps b.on { background: #FFC23D; animation: float 1.6s ease-in-out infinite; }
+.mock__steps b.todo { background: #DDE3E8; }
+.mock__rows { display: grid; gap: 8px; }
+.mock__rows span { height: 22px; border-radius: 6px; background: #fff; border: 1.5px solid #DDE3E8; position: relative; }
+.mock__rows span::before { content: ""; position: absolute; left: 8px; top: 7px; width: 38%; height: 6px; border-radius: 3px; background: #C9D3DB; }
+.mock__rows span::after { content: ""; position: absolute; right: 8px; top: 5px; width: 54px; height: 10px; border-radius: 5px; background: color-mix(in srgb, #2F9BDB 35%, #fff); }
+.mock__rows span:nth-child(2)::after { background: color-mix(in srgb, #F2603F 35%, #fff); }
+.mock__rows span:nth-child(3)::after { background: color-mix(in srgb, #5CC79A 45%, #fff); }
+
+@media (prefers-reduced-motion: reduce) { .laptop, .spark, .mock__steps b.on { animation: none !important; } .tool:hover { transform: none; } }
+@media print { .laptop { display: none !important; } }
+@media (min-width: 1060px) {
+  .tool--feature { grid-row: auto; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 28px; }
+  .tool--feature h3 { font-size: 1.9rem; }
+  .tool--feature .tool__body > p:not(.tool__tag) { font-size: 1rem; }
+}
