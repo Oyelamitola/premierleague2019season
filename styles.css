@@ -1100,3 +1100,5 @@ html { scroll-padding-top: 90px; }
 .news-mock { transform: rotate(1deg); }
 .section { padding: 76px 0; }
 @media (min-width: 960px) { .section { padding: 104px 0; } }
+.seeking__loc { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+.seeking__loc svg { width: 18px; height: 18px; color: var(--coral); }
