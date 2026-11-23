@@ -1022,3 +1022,28 @@ html { scroll-padding-top: 90px; }
 .cert h4 { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; line-height: 1.25; margin: 0; }
 .cert p { margin: 2px 0 0; font-size: .86rem; color: var(--muted); }
 .cert time { grid-column: 2; font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+
+/* ---------- Kind words (recommendations) ---------- */
+.kind-head { display: grid; gap: 24px; align-items: end; margin-bottom: 36px; }
+.kind-head .section__head { margin-bottom: 0; }
+@media (min-width: 960px) { .kind-head { grid-template-columns: 1fr 200px; gap: 48px; } }
+.heart { position: relative; width: 140px; justify-self: center; margin-top: 44px; }
+.heart .bubble { left: 50%; top: -46px; transform: translateX(-50%); animation: none; }
+.heart .bubble::after { left: calc(50% - 7px); }
+.heart__shape { transform-box: fill-box; transform-origin: center; animation: beat 1.6s ease-in-out infinite; }
+@keyframes beat { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.08); } 40% { transform: scale(.97); } }
+.quotes { display: grid; gap: 16px; }
+@media (min-width: 820px) { .quotes { grid-template-columns: repeat(2, 1fr); } }
+.quote { margin: 0; position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; padding: 30px 28px 24px; border-radius: 24px;
+  border: 1px solid var(--glass-border); border-left: 5px solid var(--c);
+  background: var(--glass-fill); -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); box-shadow: var(--glass-shadow), var(--glass-inset); }
+.quote::before { content: "\201C"; position: absolute; top: -6px; right: 22px; font-family: var(--serif); font-size: 6.5rem; line-height: 1; color: var(--c); opacity: .35; pointer-events: none; }
+.quote blockquote { margin: 0; }
+.quote blockquote p { margin: 0; font-family: var(--serif); font-size: 1.12rem; line-height: 1.55; }
+.quote figcaption { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding-top: 14px; border-top: 1px dashed var(--line); }
+.quote__avatar { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: .85rem; color: #fff; background: var(--c); box-shadow: inset 0 1px 0 rgba(255,255,255,.35); }
+.quote figcaption b { display: block; font-size: .98rem; }
+.quote figcaption small { display: block; font-size: .84rem; color: var(--muted); line-height: 1.35; }
+.quote time { font-size: .78rem; font-weight: 700; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .heart__shape { animation: none !important; } }
+@media print { .heart { display: none !important; } }

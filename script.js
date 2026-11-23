@@ -39,7 +39,7 @@
 
   // Liquid glass: a soft glare follows the pointer across glass cards (mouse/trackpad only)
   if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reduceMotion) {
-    var glassSel = '.hero__card, .role, .case, .tool, .skillset, .cred, .now-card, .pipe, .now-stats li, .win, .article, .principles li, .stat';
+    var glassSel = '.quote, .post, .cert, .hero__card, .role, .case, .tool, .skillset, .cred, .now-card, .pipe, .now-stats li, .win, .article, .principles li, .stat';
     document.querySelectorAll(glassSel).forEach(function (el) {
       el.classList.add('glare-host');
       var g = document.createElement('span'); g.className = 'glare'; g.setAttribute('aria-hidden', 'true');
