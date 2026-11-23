@@ -1,0 +1,67 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;width:1584px;height:396px;overflow:hidden;font-family:'Hanken Grotesk',sans-serif;color:#F3EEE3;
+  background:linear-gradient(135deg,#12604A 0%,#0E4D3A 45%,#082A20 100%);position:relative}
+.blob{position:absolute;border-radius:50%}
+.b1{width:520px;height:520px;left:-160px;top:-260px;background:radial-gradient(circle,rgba(242,96,63,.45),transparent 65%)}
+.b2{width:620px;height:620px;right:-180px;top:-300px;background:radial-gradient(circle,rgba(47,155,219,.38),transparent 65%)}
+.b3{width:560px;height:560px;left:560px;bottom:-380px;background:radial-gradient(circle,rgba(255,194,61,.32),transparent 65%)}
+.b4{width:420px;height:420px;left:980px;top:-240px;background:radial-gradient(circle,rgba(142,111,224,.35),transparent 65%)}
+.ring{position:absolute;left:260px;top:-420px;width:900px;height:900px;border-radius:50%;border:2px dashed rgba(240,178,62,.18)}
+/* glass panel holding the message */
+.panel{position:absolute;left:452px;top:46px;width:1084px;height:264px;border-radius:32px;
+  background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.05));
+  border:1px solid rgba(255,255,255,.22);box-shadow:0 30px 60px -30px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.35);
+  backdrop-filter:blur(18px)}
+.left{position:absolute;left:500px;top:78px;width:600px}
+.eb{display:inline-flex;align-items:center;gap:10px;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#F0B23E;font-weight:800}
+.eb i{width:9px;height:9px;border-radius:50%;background:#5CC79A;box-shadow:0 0 0 4px rgba(92,199,154,.25)}
+h1{font-family:Fraunces;font-weight:500;font-size:44px;line-height:1.08;margin:16px 0 0;letter-spacing:-.015em;color:#fff}
+h1 em{font-style:normal;background:linear-gradient(90deg,#FF9A80,#C4B0FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin-top:16px;font-size:18px;color:#C9D5CE;font-weight:600}
+.sub b{color:#fff}
+.right{position:absolute;left:1124px;top:86px;width:384px;text-align:center}
+.visit{font-size:14px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:#C9D5CE}
+.url{margin-top:12px;display:inline-flex;align-items:center;gap:12px;padding:18px 28px;border-radius:999px;
+  background:linear-gradient(160deg,#FFD36B,#E9A400);color:#13201A;font-weight:800;font-size:36px;letter-spacing:-.01em;
+  box-shadow:0 16px 34px -12px rgba(233,164,0,.8),inset 0 2px 0 rgba(255,255,255,.65),0 0 0 6px rgba(255,211,107,.18)}
+.url svg{width:30px;height:30px;stroke:#13201A;fill:none;stroke-width:2.2}
+.chips{margin-top:16px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.chips span{font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#F3EEE3}
+/* road + car */
+.road{position:absolute;left:452px;right:0;top:352px;height:0;border-top:3px dashed rgba(240,178,62,.55)}
+.car{position:absolute;left:1360px;top:302px;width:96px}
+.stops{position:absolute;left:520px;top:344px;display:flex;gap:84px}
+.stops span{position:relative;font-size:12px;font-weight:700;color:#B9C7BF;padding-top:22px}
+.stops span::before{content:"";position:absolute;left:50%;top:2px;transform:translateX(-50%);width:12px;height:12px;border-radius:50%;background:#0E4D3A;border:3px solid #F0B23E}
+</style></head><body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div><div class="ring"></div>
+<div class="panel"></div>
+<div class="left">
+  <div class="eb"><i></i>Operator · Mobility · Fintech · Marketplace</div>
+  <h1>Building the operations that move <em>vehicles, money and people</em> across Africa.</h1>
+  <div class="sub"><b>Supply chain</b> · Import operations · Mobility finance · <b>8 African markets</b></div>
+</div>
+<div class="right">
+  <div class="visit">See my work</div>
+  <div class="url"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19"/></svg>tolaoyelami.org</div>
+  <div class="chips"><span>$3.2M in 90 days</span><span>618% growth</span><span>43% faster pickups</span></div>
+</div>
+<div class="road"></div>
+<div class="stops"><span>Nigeria</span><span>Ghana</span><span>Côte d'Ivoire</span><span>Senegal</span><span>Kenya</span><span>Uganda</span></div>
+<svg class="car" viewBox="0 0 170 100">
+  <ellipse cx="88" cy="94" rx="66" ry="5" fill="rgba(0,0,0,.3)"/>
+  <path d="M18 76 V60 Q18 47 32 45 L52 42 Q64 18 92 18 H104 Q126 18 138 42 L150 46 Q160 50 160 62 V76 Z" fill="#F2603F" stroke="#13201A" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M62 42 Q70 26 90 26 V42 Z" fill="#CDEBFA" stroke="#13201A" stroke-width="3"/>
+  <path d="M98 42 V26 H104 Q120 26 128 42 Z" fill="#CDEBFA" stroke="#13201A" stroke-width="3"/>
+  <circle cx="72" cy="58" r="8" fill="#fff" stroke="#13201A" stroke-width="2.5"/><circle cx="74.5" cy="59" r="3.6" fill="#13201A"/>
+  <circle cx="98" cy="58" r="8" fill="#fff" stroke="#13201A" stroke-width="2.5"/><circle cx="100.5" cy="59" r="3.6" fill="#13201A"/>
+  <path d="M78 68 Q86 76 94 68" stroke="#13201A" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="61" cy="67" r="4" fill="#FF9DB0"/><circle cx="110" cy="67" r="4" fill="#FF9DB0"/>
+  <rect x="152" y="52" width="6" height="9" rx="2" fill="#FFC23D" stroke="#13201A" stroke-width="2"/>
+  <circle cx="46" cy="77" r="14" fill="#13201A"/><circle cx="46" cy="77" r="6" fill="#E9E4D8"/>
+  <circle cx="130" cy="77" r="14" fill="#13201A"/><circle cx="130" cy="77" r="6" fill="#E9E4D8"/>
+</svg>
+</body></html>
